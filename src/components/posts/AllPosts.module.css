@@ -1,0 +1,30 @@
+.posts {
+  padding: 40px 80px;
+  display: grid;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+  .posts {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+/* LAPTOP */
+@media screen and (max-width: 1439px) {
+  .posts {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* TABLET */
+@media screen and (max-width: 1024px) {
+  .posts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 767px) {
+  .posts {
+    grid-template-columns: 1fr;
+    padding: 40px 40px;
+  }
+}
