@@ -1,0 +1,10 @@
+@import url(./normalize.css);
+@import url(./adjustment.css);
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  background-color: #f6f6f6;
+}
