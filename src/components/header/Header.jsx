@@ -1,7 +1,7 @@
 import SVG from '../SVG';
 import style from './Header.module.css';
 
-const Header = () => {
+const Header = ({ setSearchValue }) => {
   return (
     <header className={style.header}>
       <div>
@@ -12,7 +12,15 @@ const Header = () => {
           <label htmlFor='input'>
             <SVG id='search' />
           </label>
-          <input className={style.input} id='input' type='text' placeholder={`You're looking for something?`} />
+          <input
+            onChange={(e) => {
+              setSearchValue(e.target.value);
+            }}
+            className={style.input}
+            id='input'
+            type='text'
+            placeholder={`You're looking for something?`}
+          />
         </form>
       </div>
     </header>

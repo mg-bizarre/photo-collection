@@ -2,7 +2,7 @@ import style from './AllPosts.module.css';
 import { useEffect, useState } from 'react';
 import Post from './post/Post';
 
-const AllPosts = () => {
+const AllPosts = ({ searchValue }) => {
   const onLikePost = async (id) => {
     const result = await fetch(`http://localhost:3100/images/${id}/likes`, {
       method: 'POST',
@@ -15,7 +15,7 @@ const AllPosts = () => {
   };
 
   const fetchImages = async () => {
-    const result = await fetch('http://localhost:3100/images');
+    const result = await fetch('http://localhost:3100/images?page=10');
     const data = await result.json();
     console.log(data);
     setImages(data);
@@ -30,7 +30,20 @@ const AllPosts = () => {
 
   return (
     <div className={style.posts}>
-      {images && images.map((img) => <Post key={img.id} img={img} onLikePost={onLikePost} />)}
+      {images &&
+        images
+          .filter((post) => {
+            if (searchValue === '') {
+              return post;
+            } else if (
+              post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+              post.author.toLowerCase().includes(searchValue.toLowerCase()) ||
+              post.price.toString().includes(searchValue.toLowerCase())
+            ) {
+              return post;
+            }
+          })
+          .map((img) => <Post key={img.id} img={img} onLikePost={onLikePost} />)}
     </div>
   );
 };

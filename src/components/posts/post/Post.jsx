@@ -23,11 +23,11 @@ const Post = ({ img, onLikePost }) => {
             {img.price.toFixed(2)} <sub>€</sub>
           </div>
 
-          <div
-            className={style.img}
-            style={{ backgroundImage: `url(${img.main_attachment.small})` }}
-            title={img.title}
-          ></div>
+          <picture alt={img.title}>
+            <source media='(max-width: 767px)' srcSet={img.main_attachment.small} />
+            <source media='(min-width: 768px)' srcSet={img.main_attachment.big} />
+            <img className={style.img} src={img.main_attachment.small} alt={img.title} />
+          </picture>
         </div>
         <div className={style.description}>
           <span className={style.title}>{img.title.toUpperCase()}</span>
