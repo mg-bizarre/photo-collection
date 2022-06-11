@@ -6,7 +6,7 @@ const AllPosts = ({}) => {
   const fetchImages = async () => {
     const result = await fetch('http://localhost:3100/images');
     const data = await result.json();
-    // console.log(data);
+    console.log(data);
     setImages(data);
   };
   const [images, setImages] = useState();
