@@ -1,12 +1,23 @@
+import { useState } from 'react';
 import style from './Post.module.css';
 
-const Post = ({ img }) => {
+const Post = ({ img, onLikePost }) => {
   const showCount = (str) => {
     return str.toString().length < 3 ? showCount('0' + str, 3) : str;
   };
+
+  const [likeCount, setLikeCount] = useState(img.likes_count);
+  const [liked, setLiked] = useState(img.liked);
+
+  const onLikeCLick = (id) => {
+    onLikePost(id);
+    liked ? setLikeCount(likeCount - 1) : setLikeCount(likeCount + 1);
+    setLiked(!liked);
+  };
+
   return (
     <div className={style.post}>
-      <a>
+      <a className={style.postLink}>
         <div className={style.imgBlock}>
           <div className={style.price}>
             {img.price.toFixed(2)} <sub>€</sub>
@@ -26,9 +37,16 @@ const Post = ({ img }) => {
         </div>
       </a>
       <div className={style.reactions}>
-        <a className={`${style.reaction} ${style.like}`}>
-          <div className={style.reactionIcon}></div>
-          <div className={style.reactionCount}>{showCount(img.likes_count)}</div>
+        <a
+          href='/'
+          className={`${style.reaction} ${style.like}`}
+          onClick={(e) => {
+            e.preventDefault();
+            onLikeCLick(img.id);
+          }}
+        >
+          <div className={liked ? `${style.reactionIcon} ${style.liked}` : `${style.reactionIcon}`}></div>
+          <div className={style.reactionCount}>{showCount(likeCount)}</div>
         </a>
         <a className={`${style.reaction} ${style.repost}`}>
           <div className={style.reactionIcon}></div>
