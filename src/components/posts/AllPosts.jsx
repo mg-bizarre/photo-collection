@@ -15,9 +15,8 @@ const AllPosts = ({ searchValue }) => {
   };
 
   const fetchImages = async () => {
-    const result = await fetch('http://localhost:3100/images?page=10');
+    const result = await fetch('http://localhost:3100/images');
     const data = await result.json();
-    console.log(data);
     setImages(data);
   };
 
@@ -25,7 +24,6 @@ const AllPosts = ({ searchValue }) => {
 
   useEffect(() => {
     fetchImages();
-    console.log(images);
   }, []);
 
   return (
