@@ -7,7 +7,13 @@ const Header = ({ setSearchValue }) => {
       <div>
         <SVG id='logo' />
       </div>
-      <form action='' className={style.form}>
+      <form
+        action=''
+        className={style.form}
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <label htmlFor='input'>
           <SVG id='search' />
         </label>
