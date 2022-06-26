@@ -7,22 +7,20 @@ const Header = ({ setSearchValue }) => {
       <div>
         <SVG id='logo' />
       </div>
-      <div>
-        <form action='' className={style.form}>
-          <label htmlFor='input'>
-            <SVG id='search' />
-          </label>
-          <input
-            onChange={(e) => {
-              setSearchValue(e.target.value);
-            }}
-            className={style.input}
-            id='input'
-            type='text'
-            placeholder={`You're looking for something?`}
-          />
-        </form>
-      </div>
+      <form action='' className={style.form}>
+        <label htmlFor='input'>
+          <SVG id='search' />
+        </label>
+        <input
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+          }}
+          className={style.input}
+          id='input'
+          type='text'
+          placeholder='You&#39;re looking for something?'
+        />
+      </form>
     </header>
   );
 };

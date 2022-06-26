@@ -17,10 +17,11 @@ const Post = ({ img, onLikePost }) => {
 
   return (
     <div className={style.post}>
-      <a className={style.postLink}>
+      <a className={style.postLink} href='/'>
         <div className={style.imgBlock}>
           <div className={style.price}>
             {img.price.toFixed(2)} <sub>€</sub>
+            <div className={style.priceBlock}></div>
           </div>
 
           <picture alt={img.title}>
@@ -37,8 +38,7 @@ const Post = ({ img, onLikePost }) => {
         </div>
       </a>
       <div className={style.reactions}>
-        <a
-          href='/'
+        <button
           className={`${style.reaction} ${style.like}`}
           onClick={(e) => {
             e.preventDefault();
@@ -47,11 +47,11 @@ const Post = ({ img, onLikePost }) => {
         >
           <div className={liked ? `${style.reactionIcon} ${style.liked}` : `${style.reactionIcon}`}></div>
           <div className={style.reactionCount}>{showCount(likeCount)}</div>
-        </a>
-        <a className={`${style.reaction} ${style.repost}`}>
+        </button>
+        <button className={`${style.reaction} ${style.repost}`}>
           <div className={style.reactionIcon}></div>
           <div className={style.reactionCount}>{showCount(img.likes_count)}</div>
-        </a>
+        </button>
       </div>
     </div>
   );

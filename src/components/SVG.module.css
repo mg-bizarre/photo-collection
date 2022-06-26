@@ -1,9 +1,10 @@
 .svg {
   line-height: 1;
+  width: 100%;
 }
 
 .logo {
-  width: 102px;
+  width: 6.375rem;
   aspect-ratio: 1 /1;
 }
 

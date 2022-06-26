@@ -1,0 +1,27 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #f6f6f6;
+  --secondary: #c2c2bd;
+  --border: #e2e2e2;
+  --reactionCount: #b6b6b4;
+}
+
+/*DESKTOP 768px*/
+@media screen and (min-width: 48rem) {
+  :root {
+    --horizontalPadding: 100px;
+  }
+}
+/* TABLET 1024px*/
+@media screen and (max-width: 64rem) {
+  :root {
+    --horizontalPadding: 50px;
+  }
+}
+/*MOBILE 767px*/
+@media screen and (max-width: 47.938rem) {
+  :root {
+    --horizontalPadding: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../fonts/Brandon-Grotesque/Brandon_med.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Droid Serif';
+  src: url('../fonts/Droid-Serif/DroidSerif.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Neutra2Text';
+  src: url('../fonts/Neutra2Text/Neutra2Text-Demi.otf');
+  font-weight: 400;
+}

@@ -1,30 +1,32 @@
 .posts {
-  padding: 40px 80px;
   display: grid;
   column-gap: 20px;
   row-gap: 20px;
 }
 
-/* DESKTOP */
-@media screen and (min-width: 1440px) {
+/* DESKTOP 1440px*/
+@media screen and (min-width: 90rem) {
   .posts {
+    padding: 40px 80px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-/* LAPTOP */
-@media screen and (max-width: 1439px) {
+/* LAPTOP 1439px*/
+@media screen and (max-width: 89.938rem) {
   .posts {
+    padding: 40px 60px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-/* TABLET */
-@media screen and (max-width: 1024px) {
+/* TABLET 1024px*/
+@media screen and (max-width: 64rem) {
   .posts {
+    padding: 40px 50px;
     grid-template-columns: 1fr 1fr;
   }
 }
-/* MOBILE */
-@media screen and (max-width: 767px) {
+/* MOBILE 767px*/
+@media screen and (max-width: 47.938rem) {
   .posts {
     grid-template-columns: 1fr;
     padding: 40px 40px;

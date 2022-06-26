@@ -3,6 +3,16 @@ import { useEffect, useState } from 'react';
 import Post from './post/Post';
 
 const AllPosts = ({ searchValue }) => {
+  const filterFunc = (find, ...rules) => {
+    if (
+      rules.some((arg) => {
+        return arg.toString().toLowerCase().includes(searchValue.toLowerCase());
+      })
+    ) {
+      return find;
+    }
+  };
+
   const onLikePost = async (id) => {
     const result = await fetch(`http://localhost:3100/images/${id}/likes`, {
       method: 'POST',
@@ -27,22 +37,19 @@ const AllPosts = ({ searchValue }) => {
   }, []);
 
   return (
-    <div className={style.posts}>
+    <main className={style.posts}>
       {images &&
         images
           .filter((post) => {
             if (searchValue === '') {
               return post;
-            } else if (
-              post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
-              post.author.toLowerCase().includes(searchValue.toLowerCase()) ||
-              post.price.toString().includes(searchValue.toLowerCase())
-            ) {
+            } else if (filterFunc(post, post.title, post.author, post.price)) {
               return post;
             }
+            return '';
           })
           .map((img) => <Post key={img.id} img={img} onLikePost={onLikePost} />)}
-    </div>
+    </main>
   );
 };
 

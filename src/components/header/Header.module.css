@@ -1,11 +1,12 @@
-/* MOBILE */
-@media screen and (max-width: 767px) {
+/* MOBILE 767px*/
+@media screen and (max-width: 47.938rem) {
   .header {
     padding: 0 30px;
+    max-width: 100%;
   }
 }
-/* DESKTOP */
-@media screen and (min-width: 768px) {
+/* DESKTOP 768px*/
+@media screen and (min-width: 48rem) {
   .header {
     padding: 0 80px;
   }
@@ -20,8 +21,9 @@
 }
 
 .form {
-  width: 270px;
-  height: 30px;
+  width: 16.875rem;
+  min-width: 5.625rem;
+  min-height: 30px;
   border-radius: 15px;
   background-color: var(--primary);
   padding: 8px 20px 7px 10px;
@@ -32,8 +34,9 @@
 }
 .input {
   width: 100%;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1rem;
+  /* line-height: 1.25rem; */
+  line-height: 1;
   color: var(--black);
   font-family: 'Arial';
 }

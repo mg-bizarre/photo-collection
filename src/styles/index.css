@@ -1,0 +1,31 @@
+@import url(./normalize.css);
+@import url(./global.css);
+@import url(./fonts.css);
+@import url(./variables.css);
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*MOBILE 767px*/
+@media screen and (max-width: 47.938rem) {
+  .container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+  }
+}
+/*DESKTOP 768px*/
+@media screen and (min-width: 48rem) {
+  body {
+    padding: 0 20px;
+  }
+  .container {
+    max-width: 1820px;
+    margin: 20px auto;
+  }
+}
+.container {
+  background-color: var(--primary);
+}
