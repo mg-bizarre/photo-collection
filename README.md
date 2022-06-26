@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deploy
+
+[mg-bizarre.github.io/photo-collection](https://mg-bizarre.github.io/photo-collection)
+
 ## Getting started
 
 After cloning this project locally run:
