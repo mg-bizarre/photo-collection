@@ -109,6 +109,7 @@
   height: 100%;
   overflow: hidden;
   object-fit: cover;
+  display: block;
 }
 
 /*PRICE*/
